@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "Link Abyss - Broken Link Detector",
+    "version": "1.0",
+    "description": "Detect broken links on websites with a dark glassmorphism UI",
+    "icons": {
+        "48": "icons/icon-48.png",
+        "96": "icons/icon-96.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "webRequest",
+        "downloads",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "19": "icons/icon-19.png",
+            "38": "icons/icon-38.png"
+        },
+        "default_title": "Link Abyss",
+        "default_popup": "popup/popup.html"
+    },
+    "background": {
+        "scripts": [
+            "background/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content/content.js"
+            ]
+        }
+    ]
+}
